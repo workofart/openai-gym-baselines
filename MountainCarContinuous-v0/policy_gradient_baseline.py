@@ -265,7 +265,7 @@ if __name__ == "__main__":
     # Test time
     state = env.reset()
     done = False
-    input('press')
+    input('press a key to continue for test run')
     while not done:
         state = policy.transform_state(state)
         action = policy.act(state)
