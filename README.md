@@ -1,4 +1,4 @@
-# openai-gym-baselines
+# openai-gym-baselines (WIP)
 A collection of baseline agents that attempts to solve problems in OpenAI gym
 
 
