@@ -1,9 +1,9 @@
 # MountainCarContinuous-v0 Baseline Agent
 
-For a detailed process of the experiment and analysis, please visit my blog post [here](http://www.henrypan.com/blog/reinforcement-learning/2019/11/04/mountain-car.html).
+For a detailed process of the experiment and analysis, please visit my blog post [here](http://www.henrypan.com/blog/reinforcement-learning/2019/11/05/pendulum.html).
 
 ## To run
-`python policy_gradient_baseline.py`
+`python actor_critic_baseline.py`
 
 ## Dependencies
 
