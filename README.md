@@ -13,5 +13,5 @@ Python 3.7.6
 
 - [MountainCarContinuous-v0](https://gym.openai.com/envs/MountainCarContinuous-v0/)
 - [Pendulum-v0](https://gym.openai.com/envs/Pendulum-v0/)
-- [Acrobot-v1](https://gym.openai.com/envs/Acrobot-v1/) (WIP)
+- [Acrobot-v1](https://gym.openai.com/envs/Acrobot-v1/)
 - [CarRacing-v0](https://gym.openai.com/envs/CarRacing-v0/) (WIP)
