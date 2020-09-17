@@ -2,6 +2,7 @@ import numpy as np
 import tensorflow as tf
 from matplotlib import pyplot as plt
 import gym
+import time
 
 from actor import Actor
 from critic import Critic
@@ -38,7 +39,7 @@ def test(env, actor):
 # hyperparameters
 LR_A = 1e-4   # learning rate for actor
 LR_C = 5e-3     # learning rate for critic (should learn faster)
-num_episodes = 500
+num_episodes = 250
 plot_frequency = 10
 
 # Network params
@@ -92,6 +93,7 @@ def train(env, sess, actor, critic):
         actor (Actor): The actor class for actor-critic agent representation
         critic (Critic): The critic class for actor-critic agent representation
     """
+    start_time = time.time()
     state = env.reset()
     plotting_rewards = []
     for i in range(num_episodes+1):
@@ -116,9 +118,11 @@ def train(env, sess, actor, critic):
         # moving_rewards = np.convolve(plotting_rewards, np.ones((20,)) / 20, mode='valid')
 
         plot(i, plotting_rewards, num_episodes - 1, plot_frequency=plot_frequency)        
+    print(f'Training took: {(time.time() - start_time):.2f} seconds')
 
 if __name__ == '__main__':
     sess = tf.Session()
+    
 
     actor = Actor(sess, n_features=N_STATES, n_actions=N_ACTION, lr=LR_A)
     critic = Critic(sess, n_features=N_STATES, lr=LR_C)
@@ -126,8 +130,9 @@ if __name__ == '__main__':
     sess.run(tf.global_variables_initializer())
 
     env = gym.make('Acrobot-v1')
+    env.seed(2) # reproducibility
     env.reset()
 
     train(env, sess, actor, critic)
-    test(env, actor)
+    # test(env, actor)
 
